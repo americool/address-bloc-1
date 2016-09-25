@@ -6,8 +6,8 @@ class AddressBook < BlocRecord::Base
   attr_reader :entries
 
 
-  def add_entry(name, phone_number, email)
-    Entry.create(name: name, phone_number: phone, email: email)
+  def add_entry(name, phone, email)
+    Entry.create(address_book_id: self.id, name: name, phone_number: phone, email: email)
   end
 
   def import_from_csv(file_name)
