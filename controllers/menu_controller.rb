@@ -59,13 +59,13 @@ class MenuController
 
   def select_address_book_menu
     puts "Select an Address Book:"
-    AddressBook.all.each_with_index do |address_book, index|
-      puts "#{index} - #{address_book.name}"
+    AddressBook.all.each do |address_book|
+      puts "#{address_book.id} - #{address_book.name}"
     end
 
-    index = gets.chomp.to_i
+    id = gets.chomp.to_i
 
-    @address_book = AddressBook.find(index)
+    @address_book = AddressBook.find(id)
     system "clear"
     return if @address_book
     puts "Please select a valid index"
