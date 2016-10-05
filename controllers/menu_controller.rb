@@ -158,7 +158,7 @@ class MenuController
   end
 
   def delete_entry(entry)
-    entry.instance_destroy()
+    entry.destroy()
     puts "#{entry.name} has been deleted"
   end
 
