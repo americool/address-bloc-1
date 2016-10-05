@@ -158,7 +158,7 @@ class MenuController
   end
 
   def delete_entry(entry)
-    address_book.entries.delete(entry)
+    entry.instance_destroy()
     puts "#{entry.name} has been deleted"
   end
 
